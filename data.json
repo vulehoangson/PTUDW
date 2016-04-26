@@ -1,0 +1,42 @@
+{
+		"HEADLINES":
+		{
+			"Noidung":"\"For me, My Family is the most important\""
+		},
+			
+			
+			
+			
+		
+		"IMAGES":
+		[
+		{"Avarta":"images/avarta.jpg"},
+		{"Facebook":"images/facebook.jpg"},
+		{"Summary":"images/summary.png"},
+		{"Experience":"images/experience.png"},
+		{"Project":"images/project.png"},
+		{"Skill":"images/skill.png"},
+		{"Education":"images/education.png"}
+		],
+			
+			
+			
+			
+		
+		
+			
+		"PROFILE":
+		{
+			
+				
+				"Hoten":"Vũ Lê Hoàng Sơn",
+				"Nghenghiep":"Student at University of Sciences, Ho Chi Minh City.",
+				"Quoctich":"From Viet Nam.",
+				"Ngaysinh":"18-08-1995."
+			
+			
+			
+		}
+
+}
+		

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>CV</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="default.css" type="text/css">
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="handle.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="myController">
+	  <div class="row" id="Row1">
+		<label id ="Headline" class="col-md-12">{{myData.HEADLINES.Noidung}}</label>
+	  </div>
+	  
+	  <div class="row" id="Row2" >
+		<image class="col-md-3" src="{{myData.IMAGES[0].Avarta}}" style="margin-left:200px">
+		<span id="Hoten">{{myData.PROFILE.Hoten}}</span>
+		</br></br></br>
+		<span id="Label3">BirthDate</span><span id="Ngaysinh">{{myData.PROFILE.Ngaysinh}}</span>
+		</br>
+		<span id="Label1">Nationality</span><span id="Quoctich">{{myData.PROFILE.Quoctich}}</span>
+		</br>
+		<span id="Label2">Education</span> <span id="Nghenghiep">{{myData.PROFILE.Nghenghiep}}</span>
+		</br>
+		<image src="{{myData.IMAGES[1].Facebook}}" style="margin-left:30px; width:20px; height:20px">
+		<a style="margin-left:100px" href="https://www.facebook.com/profile.php?id=100008233060139">https://www.facebook.com/profile.php?id=100008233060139</a>
+	  </div>
+	  
+	  <div class="row" id="Row3">
+		<div class="col-md-2">
+			<label id="Background">Background</label>
+		</div>
+	  </div>
+	  
+	  <div class="row" id="Row4">
+	  <image src="{{myData.IMAGES[2].Summary}}" style="height:30px;width:30px;">
+	  <span id="Summary">Summary</span>
+	  </br></br>
+	  <ul>
+		<li>Third-year student in University of Sciences, Ho Chi Minh City.</li> 
+		<li>Independent research skills.</li>
+		<li>Good at Teamwork Skills.</li>
+		<li>Programming languages: C/C++, C#, Javascript, CSS.</li>
+	  </ul>
+	  
+	  </div>
+	  
+	  <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	  
+	  <div class="row" id="Row5">
+		<image src="{{myData.IMAGES[3].Experience}}" style="height:30px;width:30px;">
+		<span id="Experience">Experience</span>
+		</br></br>
+		<ul>
+			<li>Graduating next year.</li>
+			<li>Don't have much Experience in Work.</li>
+		</ul>
+	  </div>
+	  
+	  <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	  
+	  <div class="row" id="Row6">
+		<image src="{{myData.IMAGES[4].Project}}" style="height:30px;width:30px;">
+		<span id="Project">Project</span>
+		</br></br>
+		<ul>
+			<li>Designing a App like Paint App in Computer.</li>
+		</ul>
+	  </div>
+	  
+	  <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	  
+	   <div class="row" id="Row7">
+		<image src="{{myData.IMAGES[5].Skill}}"  style="height:30px;width:30px;">
+		<span id="Skill">Skills</span>
+		</br></br>
+		<ul>
+			<li>C/C++, C#.</li>
+			<li>Javascript, CSS.</li>
+		</ul>
+	   </div>
+	   
+	   <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	   
+	    <div class="row" id="Row8">
+		<image src="{{myData.IMAGES[6].Education}}"  style="height:30px;width:30px;">
+		<span id="Education">Education</span>
+		</br></br>
+		<ul>
+			<li>University of Sciences, Ho Chi Minh City.</li>
+		</ul>
+	   </div>
+	  
+	  
+  </div>
+</body >
+
+</html>
