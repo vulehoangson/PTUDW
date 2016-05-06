@@ -2,7 +2,7 @@
 {
 	font-size:30;
 	
-	color:white;
+	color:black;
 	font-weight:bold;
 	font-style:italic;
 	
@@ -10,7 +10,7 @@
 #Row1
 {
 	height:50px;
-	background:url('images/headline_background.jpg');
+	background-image:url('images/headline_background.jpg');
 	background-size:100%;
 	background-repeat: no-repeat;
 	text-align:center;
@@ -22,33 +22,33 @@
 }
 #Row3
 {
-	padding-top:20px;
+	
 	
 }
 #Row4
 {
 	padding-top:20px;
-	margin-left:220px;
+	margin-left:140px;
 }
 #Row5
 {
 	padding-top:20px;
-	margin-left:220px;
+	margin-left:140px;
 }
 #Row6
 {
 	padding-top:20px;
-	margin-left:220px;
+	margin-left:140px;
 }
 #Row7
 {
 	padding-top:20px;
-	margin-left:220px;
+	margin-left:140px;
 }
 #Row8
 {
 	padding-top:20px;
-	margin-left:220px;
+	margin-left:140px;
 }
 body
 {
@@ -57,23 +57,30 @@ body
 #Hoten
 {
 	font-weight:bold;
-	font-size:25px;
-	margin-left:30px;
-}
-#Nghenghiep
-{
 	font-size:20px;
 	margin-left:30px;
-}
-#Quoctich
-{
-	font-size:20px;
-	margin-left:30px;
+	color:black;
 }
 #Ngaysinh
 {
+	font-weight:bold;
 	font-size:20px;
-	margin-left:35px;
+	margin-left:30px;
+	color:black;
+}
+#Quoctich
+{
+	font-weight:bold;
+	font-size:20px;
+	margin-left:30px;
+	color:black;
+}
+#Nghenghiep
+{
+	font-weight:bold;
+	font-size:20px;
+	margin-left:30px;
+	color:black;
 }
 #Label1
 {
@@ -98,14 +105,14 @@ body
 {
 	font-size:20px;
 	font-weight:bold;
-	margin-left:200px;
+	
 	color:white;
 	background-color:black;
 }
 #Summary
 {
 	color:gray;
-	margin-left:20px;
+
 	font-size:20px;
 	
 }
