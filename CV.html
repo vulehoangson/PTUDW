@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="default.css" type="text/css">
+	<link rel="stylesheet" href="css/default.css" type="text/css">
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-	<script src="handle.js"></script>
+	<script src="js/handle.js"></script>
+	<link href="css/xeditable.css" rel="stylesheet">
+	<script src="js/xeditable.js"></script>
 </head>
 
 <body ng-app="myApp">
@@ -18,86 +20,126 @@
 		<label id ="Headline" class="col-md-12">{{myData.HEADLINES.Noidung}}</label>
 	  </div>
 	  
-	  <div class="row" id="Row2" >
-		<image class="col-md-3" src="{{myData.IMAGES[0].Avarta}}" style="margin-left:200px">
-		<span id="Hoten">{{myData.PROFILE.Hoten}}</span>
+	  <div style="background-color:white;margin: 50px auto; padding:20px 20px 20px 5px;width:1000px;" class="row" id="Row2" >
+		<img class="col-md-3" src="{{myData.IMAGES[0].Avarta}}" />
+			<a id="Hoten" href="#" editable-text="myData.PROFILE.Hoten" e-required>{{ myData.PROFILE.Hoten || "empty" }}</a>
 		</br></br></br>
-		<span id="Label3">BirthDate</span><span id="Ngaysinh">{{myData.PROFILE.Ngaysinh}}</span>
+		<span id="Label3">BirthDate</span><a id="Ngaysinh" href="#" editable-text="myData.PROFILE.Ngaysinh" e-required>{{ myData.PROFILE.Ngaysinh || "empty" }}</a>
 		</br>
-		<span id="Label1">Nationality</span><span id="Quoctich">{{myData.PROFILE.Quoctich}}</span>
+		<span id="Label1">Nationality</span><a id="Quoctich" href="#" editable-text="myData.PROFILE.Quoctich" e-required>{{ myData.PROFILE.Quoctich || "empty" }}</a>
 		</br>
-		<span id="Label2">Education</span> <span id="Nghenghiep">{{myData.PROFILE.Nghenghiep}}</span>
-		</br>
-		<image src="{{myData.IMAGES[1].Facebook}}" style="margin-left:30px; width:20px; height:20px">
+		<span id="Label2">Education</span> <a id="Nghenghiep" href="#" editable-text="myData.PROFILE.Nghenghiep"e-required>{{ myData.PROFILE.Nghenghiep || "empty" }}</a>
+		</br></br>
+		<image src="{{myData.IMAGES[1].Facebook}}" style="margin-left:30px; width:20px; height:20px"/>
 		<a style="margin-left:100px" href="https://www.facebook.com/profile.php?id=100008233060139">https://www.facebook.com/profile.php?id=100008233060139</a>
 	  </div>
-	  
+	<div style="background-color:white; margin: 50px auto;padding-bottom:50px;width:1000px;">
 	  <div class="row" id="Row3">
-		<div class="col-md-2">
-			<label id="Background">Background</label>
-		</div>
+		<label style="padding:10px;margin-left:15px;" id="Background">Background</label>
 	  </div>
 	  
 	  <div class="row" id="Row4">
-	  <image src="{{myData.IMAGES[2].Summary}}" style="height:30px;width:30px;">
-	  <span id="Summary">Summary</span>
-	  </br></br>
-	  <ul>
-		<li>Third-year student in University of Sciences, Ho Chi Minh City.</li> 
-		<li>Independent research skills.</li>
-		<li>Good at Teamwork Skills.</li>
-		<li>Programming languages: C/C++, C#, Javascript, CSS.</li>
-	  </ul>
-	  
+	   <form ng-show="visiblesummary">
+            <label>Information:</label>
+            <input type="text" ng-model="summary" placeholder="INFORMATION" ng-required/>
+            <input  type="button"  value="Save" ng-click="AddSummary()">
+        </form>
+		<div ng-hide="visiblesummary">
+		  <img src="{{myData.IMAGES[2].Summary}}" style="height:30px;width:30px;">
+		  <span id="Summary">Summary</span><button style="margin-left:520px;width:50px;height:30px;" ng-click="visiblesummary=true">Add</button>
+		  </br></br>
+		  <ul>
+			<li ng-repeat="summary in myData.SUMMARY">
+				<a  style="color:black;" href="#" editable-text="summary.value" e-required>{{ summary.value || "empty" }}</a>
+			</li> 
+
+		  </ul>
+	  </div>
 	  </div>
 	  
-	  <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	  <hr style="margin-left:140px;margin-right:160px;border-style:inset;">
 	  
 	  <div class="row" id="Row5">
-		<image src="{{myData.IMAGES[3].Experience}}" style="height:30px;width:30px;">
-		<span id="Experience">Experience</span>
-		</br></br>
-		<ul>
-			<li>Graduating next year.</li>
-			<li>Don't have much Experience in Work.</li>
-		</ul>
+		  <form ng-show="visibleexperience">
+				<label>Information:</label>
+				<input type="text" ng-model="experience" placeholder="INFORMATION" ng-required/>
+				<input  type="button"  value="Save" ng-click="AddExperience()">
+			</form>
+		  <div ng-hide="visibleexperience">
+			<img src="{{myData.IMAGES[3].Experience}}" style="height:30px;width:30px;">
+			<span id="Experience">Experience</span><button style="margin-left:490px;width:50px;height:30px;" ng-click="visibleexperience=true">Add</button>
+			</br></br>
+			<ul>
+				<li ng-repeat="experience in myData.EXPERIENCE">
+				<a  style="color:black;" href="#" editable-text="experience.value" e-required>{{ experience.value || "empty" }}</a>
+			</li> 
+			</ul>
+			</div>
 	  </div>
 	  
-	  <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	  <hr style="margin-left:140px;margin-right:160px;border-style:inset;">
 	  
 	  <div class="row" id="Row6">
-		<image src="{{myData.IMAGES[4].Project}}" style="height:30px;width:30px;">
-		<span id="Project">Project</span>
-		</br></br>
-		<ul>
-			<li>Designing a App like Paint App in Computer.</li>
-		</ul>
+		<form ng-show="visibleproject">
+				<label>Information:</label>
+				<input type="text" ng-model="project" placeholder="INFORMATION" ng-required/>
+				<input  type="button"  value="Save" ng-click="AddProject()">
+		</form>
+		<div ng-hide="visibleproject">
+			<img src="{{myData.IMAGES[4].Project}}" style="height:30px;width:30px;">
+			<span id="Project">Project</span><button style="margin-left:530px;width:50px;height:30px;" ng-click="visibleproject=true">Add</button>
+			</br></br>
+			<ul>
+				<li ng-repeat="project in myData.PROJECT">
+				<a  style="color:black;" href="#" editable-text="project.value" e-required>{{ project.value || "empty" }}</a>
+			</li> 
+			</ul>
+		</div>
 	  </div>
 	  
-	  <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	  <hr style="margin-left:140px;margin-right:160px;border-style:inset;">
 	  
 	   <div class="row" id="Row7">
-		<image src="{{myData.IMAGES[5].Skill}}"  style="height:30px;width:30px;">
-		<span id="Skill">Skills</span>
-		</br></br>
-		<ul>
-			<li>C/C++, C#.</li>
-			<li>Javascript, CSS.</li>
-		</ul>
+		   <form ng-show="visibleskill">
+				<label>Information:</label>
+				<input type="text" ng-model="skill" placeholder="INFORMATION" ng-required/>
+				<input  type="button"  value="Save" ng-click="AddSkill()">
+			</form>
+		   <div ng-hide="visibleskill">
+				<img src="{{myData.IMAGES[5].Skill}}"  style="height:30px;width:30px;">
+				<span id="Skill">Skills</span><button style="margin-left:550px;width:50px;height:30px;" ng-click="visibleskill=true">Add</button>
+				</br></br>
+				<ul>
+					<li ng-repeat="skill in myData.SKILL">
+					<a  style="color:black;" href="#" editable-text="skill.value" e-required>{{ skill.value || "empty" }}</a>
+					</li> 
+				</ul>
+			</div>
 	   </div>
 	   
-	   <hr style="margin-left:200px;margin-right:400px;border-style:inset;">
+	   <hr style="margin-left:140px;margin-right:160px;border-style:inset;">
 	   
 	    <div class="row" id="Row8">
-		<image src="{{myData.IMAGES[6].Education}}"  style="height:30px;width:30px;">
-		<span id="Education">Education</span>
-		</br></br>
-		<ul>
-			<li>University of Sciences, Ho Chi Minh City.</li>
-		</ul>
+			<form ng-show="visibleeducation">
+				<label>Information:</label>
+				<input type="text" ng-model="education" placeholder="INFORMATION" ng-required/>
+				<input  type="button"  value="Save" ng-click="AddEducation()">
+			</form>
+			<div ng-hide="visibleeducation">
+				<img src="{{myData.IMAGES[6].Education}}"  style="height:30px;width:30px;">
+				<span id="Education">Education</span><button style="margin-left:510px;width:50px;height:30px;" ng-click="visibleeducation=true">Add</button>
+				</br></br>
+				<ul>
+					<li ng-repeat="education in myData.EDUCATION">
+					<a  style="color:black;" href="#" editable-text="education.value" e-required>{{ education.value || "empty" }}</a>
+				</li> 
+				</ul>
+			</div>
 	   </div>
-	  
-	  
+	  </div>
+	   
+		
+	
   </div>
 </body >
 
