@@ -20,11 +20,6 @@
 		],
 			
 			
-			
-			
-		
-		
-			
 		"PROFILE":
 		{
 			
@@ -36,7 +31,38 @@
 			
 			
 			
-		}
-
+		},
+				
+		"SUMMARY":
+		[
+			{"value":"Third-year student in University of Sciences, Ho Chi Minh City."},
+			{"value":"Independent research skills."},
+			{"value":"Independent research skills."},
+			{"value":"Good at Teamwork Skills."},
+			{"value":"Programming languages: C/C++, C#, Javascript, CSS."}
+		],
+		
+		"EXPERIENCE":
+		[
+			{"value":"Graduating next year."},
+			{"value":"Don't have much Experience in Work."}
+		],
+		
+			
+		"PROJECT":
+		[
+			{"value":"Designing a App like Paint App in Computer."}
+		],
+		
+		"SKILL":
+		[
+			{"value":"C/C++, C#."},
+			{"value":"Javascript, CSS."}
+		],
+		
+		"EDUCATION":
+		[
+			{"value":"University of Sciences, Ho Chi Minh City."}
+		]
 }
 		
